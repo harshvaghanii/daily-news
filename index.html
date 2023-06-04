@@ -10,14 +10,39 @@
   <body>
     <nav>
       <div class="main-nav container flex">
-        <a href="#" class="company-logo">
+        <a href="#" onclick="reload()" class="company-logo">
           <img src="./assets/logo.png" alt="Company Logo" />
         </a>
         <div class="nav-links">
           <ul class="flex">
-            <li class="hover-link nav-item">IPL</li>
-            <li class="hover-link nav-item">Finance</li>
-            <li class="hover-link nav-item">Politics</li>
+            <li
+              class="hover-link nav-item"
+              id="ipl"
+              onclick="navItemHandler('ipl')"
+            >
+              IPL
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="finance"
+              onclick="navItemHandler('finance')"
+            >
+              Finance
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="politics"
+              onclick="navItemHandler('politics')"
+            >
+              Politics
+            </li>
+            <li
+              class="hover-link nav-item"
+              id="technology"
+              onclick="navItemHandler('technology')"
+            >
+              Technology
+            </li>
           </ul>
         </div>
         <div class="search-bar flex">
@@ -26,34 +51,41 @@
             class="news-input"
             placeholder="eg : Science"
             name=""
-            id=""
+            id="news-input"
           />
-          <button class="search-button">Search</button>
+          <button
+            class="search-button"
+            id="search-button"
+            onclick="searchNews()"
+          >
+            Search
+          </button>
         </div>
       </div>
     </nav>
     <main>
-      <div class="cards-container container flex">
-        <div class="card">
-          <div class="card-header">
-            <img
-              src="https://via.placeholder.com/400x200"
-              alt="News Image"
-              id="news-img"
-            />
-          </div>
-          <div class="card-content">
-            <h3>This is the title!</h3>
-            <h6>End Gadget 26/08/2023</h6>
-            <p class="news-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-              facilis quae illum aut error, ad eos minima cumque vitae
-              obcaecati.
-            </p>
-          </div>
+      <div class="cards-container container flex" id="cards-container"></div>
+    </main>
+
+    <template id="template-news-card">
+      <div class="card">
+        <div class="card-header">
+          <img
+            src="https://via.placeholder.com/400x200"
+            alt="News Image"
+            id="news-img"
+          />
+        </div>
+        <div class="card-content">
+          <h3 id="news-title">This is the title!</h3>
+          <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+          <p class="news-desc" id="news-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+            facilis quae illum aut error, ad eos minima cumque vitae obcaecati.
+          </p>
         </div>
       </div>
-    </main>
+    </template>
 
     <script src="script.js"></script>
   </body>
